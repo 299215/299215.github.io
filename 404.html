@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html align="center" style="font-family: system-ui, -apple-system, arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;cursor:default;color: #fff;background-color: #000;font-feature-settings: 'tnum';" >
+<head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" charset="utf-8">
+<title>404</title>
+<script>
+  setcookie('param_cookie',0,10);
+</script>
+<script>
+  function body_onload()
+{
+    if(0 == getcookie('param_cookie')){
+        setcookie("param_cookie",1,10);
+        window.location.reload(true); 
+    }
+}
+</script>
+<script>
+  window.onload = function() {
+  // 阻止双击放大
+  var lastTouchEnd = 0;
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) { event.preventDefault(); }
+  });
+  document.addEventListener('touchend', function(event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) { event.preventDefault(); }
+    lastTouchEnd = now;
+  }, false);
+  // 阻止双指放大
+  document.addEventListener('gesturestart', function(event) {
+    event.preventDefault();
+  });
+}
+</script>
+</head>
+<body onLoad="body_onload()">
+<center><br><span style="font-size: 33px;text-shadow: 0 0 9px rgb(236, 53, 166);">404 Not Found</span>
+<br><br><span style="font-size: 20px;">发布者：<b>Pixel</b></span>
+<br><span style="font-size: 20px;">修订于 2022/7/2 08:00</span>
+<hr><div align="left"><br>
+
+</div>
+<br>
+<hr>
+<span style="color: #ff1;">S战队QQ群号：706230911</span><br><br><br></center>
+</body></html>
