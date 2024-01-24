@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html align="center" style="font-family: system-ui, -apple-system, arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;cursor:default;color: #fff;background-color: #000;font-feature-settings: 'tnum';" >
+<head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" charset="utf-8">
+<title>HT301880</title>
+<style>
+  a{color: #ff1;}
+</style>
+<script>
+  setcookie('param_cookie',0,10);
+</script>
+<script>
+  function body_onload()
+{
+    if(0 == getcookie('param_cookie')){
+        setcookie("param_cookie",1,10);
+        window.location.reload(true); 
+    }
+}
+</script>
+<script>
+  window.onload = function() {
+  // 阻止双击放大
+  var lastTouchEnd = 0;
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) { event.preventDefault(); }
+  });
+  document.addEventListener('touchend', function(event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) { event.preventDefault(); }
+    lastTouchEnd = now;
+  }, false);
+  // 阻止双指放大
+  document.addEventListener('gesturestart', function(event) {
+    event.preventDefault();
+  });
+}
+</script>
+</head>
+<body onLoad="body_onload()">
+<center><br><span style="font-size: 33px;text-shadow: 0 0 9px rgb(236, 53, 166);">猫先生的道别信</span>
+<br><br><span style="font-size: 20px;">发布者：<b>Pixel</b></span>
+<br><span style="font-size: 20px;">修订于 2024/1/24 20:08</span>
+<hr><div align="left"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我走了，皮鞋，告诉他们也不必这么想念我，就当我没有来过，好男儿不能胸无大志，我要出去找我的志向，谢谢你们这么长时间的陪伴，等我找到我的志向，我会回来的。后会有期！
+
+
+</div>
+<br>
+<hr>
+<span style="color: rgb(9, 251, 9);">P式娱乐房</span><br><br><br></center>
+</body></html>
