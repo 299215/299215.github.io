@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html align="center" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;cursor:default;color: #fff;background-color: #000;font-feature-settings: 'tnum';" >
+<html leftmargin="0" topmargin="0" οncοntextmenu="return false" οndragstart="return false" onselectstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" ondragstart="return false;" oncontextmenu="return false;" align="center" style="font-family: system-ui, -apple-system, arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;cursor:default;color: #fff;background-color: #000;font-feature-settings: 'tnum';" >
 <head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" charset="utf-8">
-<title>一站通</title>
+<title>P式娱乐房</title>
+<style>
+  a{color: #ff1;}
+  #nn{width: 100%;margin-top: 13px;border-radius: 8px;text-align: left;font-size: 23px;color: #fff;background-color: #2e4688;padding-top: 7px;padding-bottom: 7px;box-shadow: 0 0 9px #fff;}
+</style>
 <script>
   setcookie('param_cookie',0,10);
 </script>
@@ -14,21 +18,28 @@
     }
 }
 </script>
-<style>
-  .c1{background-color: #d1205e;}
-  .c2{background-color: #0d9421;}
-  .c3{background-color: #2020d1;}
-  .c4{background-color: #cc9a2f;}
-.fx{filter: invert(100%);}
-#cc{font-size: 20px;width: 131px;padding-top: 10px;display: inline-block;height: 100px;overflow: hidden;border-radius: 17px;margin: 4px;}
-</style>
+<script>
+  window.onload = function() {
+  // 阻止双击放大
+  var lastTouchEnd = 0;
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) { event.preventDefault(); }
+  });
+  document.addEventListener('touchend', function(event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) { event.preventDefault(); }
+    lastTouchEnd = now;
+  }, false);
+  // 阻止双指放大
+  document.addEventListener('gesturestart', function(event) {
+    event.preventDefault();
+  });
+}
+</script>
 </head>
 <body onLoad="body_onload()">
-<center><br><br><br><br>
-<div id="cc" class="c1"><img src="image/1.webp" class="fx" width="62"><br>管理条例</div>
-<div id="cc" class="c2"><img src="image/2.webp" class="fx" width="62"><br>荣誉记录</div>
-<div id="cc" class="c3"><img src="image/3.webp" class="fx" width="62"><br>王者内战</div>
-<div id="cc" class="c4"><img src="image/5.webp" class="fx" width="62"><br>通知公示</div>
+<center><br>
+  <div id="nn" onclick="window.open('a/out.html','_self')" style="background-color: rgb(211, 96, 19);">&nbsp;公会信息发布系统</div>
 
 
 
@@ -45,30 +56,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br><br><br><br>
+</div>
+<br>
 <hr>
-狼人杀公会号：299215<br>
-QQ群号：706230911</center>
+<span style="color: rgb(9, 251, 9);">P式娱乐房</span><br><br><br></center>
 </body></html>
