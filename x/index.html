@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html align="center" style="font-family:arial ,system-ui , -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;cursor:default;color: #fff;background-color: #000;font-feature-settings: 'tnum';" >
+<head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" charset="utf-8">
+<title>X式会社新区 管理层</title>
+<style>
+  #tou{position: fixed;top:0px;left:0px;background-color: #fff;font-size: 17px;color: #000;width: 100%;padding: 15px;text-align: left;box-shadow: 0 0 7px #aaa;}
+</style>
+<script>
+  setcookie('param_cookie',0,10);
+</script>
+<script>
+  function body_onload()
+{
+    if(0 == getcookie('param_cookie')){
+        setcookie("param_cookie",1,10);
+        window.location.reload(true); 
+    }
+}
+</script>
+<script>
+  window.onload = function() {
+  // 6
+  var lastTouchEnd = 0;
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) { event.preventDefault(); }
+  });
+  document.addEventListener('touchend', function(event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) { event.preventDefault(); }
+    lastTouchEnd = now;
+  }, false);
+  // 8
+  document.addEventListener('gesturestart', function(event) {
+    event.preventDefault();
+  });
+}
+</script>
+</head>
+<body>
+<div id="tou">X式会社新区 - 高管设定</div>
+<br><br><br><br><div align="left" style="font-size: 22px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3月4日18时许，P式娱乐房更名为X式会社，并在原有基础上成立新区。此后自第9批房员开始每一名加入公会的新成员都将划分至新区。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新区QQ群聊已于3月9日正式对外开放，群号为<span style="color: #4f4">905697062</span>，（由于狼人杀公会无法拆分，新成员仍旧使用原有公会ID: 299215）</div>
+<br><br><span style="font-size: 29px;text-shadow: 2px 2px 17px #f4c;">会长</span><br><span style="font-size: 21px;text-shadow: 2px 2px 17px rgb(68, 255, 140);">Pixel<!--(01p001)--></span>
+
+<br><br><span style="font-size: 29px;text-shadow: 2px 2px 17px rgb(255, 168, 68);">副会长</span><br><span style="font-size: 21px;text-shadow: 2px 2px 17px rgb(68, 255, 140);">78<br>lucky.</span>
+
+<br><br><span style="font-size: 29px;text-shadow: 2px 2px 17px rgb(202, 238, 104);">管理员</span><br><span style="font-size: 21px;text-shadow: 2px 2px 17px rgb(68, 255, 140);">落叶<br></span>
+
+<br><br>
+</body>
+</html>
