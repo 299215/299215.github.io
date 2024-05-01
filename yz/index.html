@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打铃器</title>
+    <audio id="audioPlayer" preload="auto"></audio>
+
+<script>
+function playAudio(src) {
+  var audio = document.getElementById("audioPlayer");
+  audio.src = src;
+  audio.play();
+}
+
+function schedulePlay() {
+  var now = new Date();
+  var playTimes = [
+    { hour: 7, minute: 40, src: "025.mp3" },
+    { hour: 7, minute: 50, src: "025.mp3" },
+    { hour: 8, minute: 0, src: "025.mp3" },
+    { hour: 8, minute: 40, src: "025.mp3" },
+    { hour: 8, minute: 55, src: "025.mp3" },
+    { hour: 9, minute: 35, src: "025.mp3" },
+    { hour: 9, minute: 45, src: "025.mp3" },
+    { hour: 10, minute: 10, src: "025.mp3" },
+    { hour: 10, minute: 50, src: "025.mp3" },
+    { hour: 11, minute: 5, src: "025.mp3" },
+    { hour: 11, minute: 45, src: "025.mp3" },
+    { hour: 13, minute: 10, src: "025.mp3" },
+    { hour: 13, minute: 30, src: "025.mp3" },
+    { hour: 14, minute: 10, src: "025.mp3" },
+    { hour: 14, minute: 25, src: "025.mp3" },
+    { hour: 15, minute: 5, src: "025.mp3" },
+    { hour: 15, minute: 30, src: "025.mp3" },
+    { hour: 16, minute: 10, src: "025.mp3" },
+    { hour: 17, minute: 30, src: "025.mp3" },
+    { hour: 18, minute: 30, src: "025.mp3" },
+    { hour: 18, minute: 45, src: "025.mp3" },
+    { hour: 19, minute: 45, src: "025.mp3" }
+  ];
+
+  for (var i = 0; i < playTimes.length; i++) {
+    var targetTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), playTimes[i].hour, playTimes[i].minute, 0);
+    var timeUntilPlay = targetTime.getTime() - now.getTime();
+
+    if (timeUntilPlay < 0) {
+      targetTime.setDate(targetTime.getDate() + 1);
+      timeUntilPlay = targetTime.getTime() - now.getTime();
+    }
+
+    setTimeout(playAudio, timeUntilPlay, playTimes[i].src);
+  }
+}
+
+schedulePlay();
+</script>
+<p id="currentTime" style="font-size: 40px;text-align: center;"></p>
+
+<script>
+function updateClock() {
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+
+  // 格式化时间，确保小时、分钟和秒始终为两位数
+  hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  var currentTimeString = hours + ":" + minutes;
+
+  // 将时间字符串更新到页面上
+  var currentTimeElement = document.getElementById("currentTime");
+  currentTimeElement.textContent = currentTimeString;
+}
+
+// 每秒更新一次时间
+setInterval(updateClock, 1000);
+
+// 页面加载时立即更新时间
+updateClock();
+</script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            color: #fff;
+        }
+        
+        p {
+            line-height: 1.6;
+        }
+        
+        a {
+            color: #6ab04c;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>铃声</h1>
+        </header>
+        <article>
+            <p>将此页面在QQ中保持打开即可正常运作</p>
+        </article>
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+</body>
+
+</html>
