@@ -1,0 +1,168 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>横向翻页示例</title>  
+<style>/* styles.css */  
+    body, html {  
+        height: 100%;  
+        margin: 0;  
+        padding: 0;  
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        overflow-x: auto; /* 允许横向滚动 */  
+        white-space: nowrap; /* 防止换行 */  
+    }  
+      
+    .container {  
+        display: flex;  
+        align-items: center;  
+        padding: 20px;  
+    }  
+      
+    .flip-item {  
+        display: flex;  
+        flex-direction: column;  
+        align-items: center;  
+        margin: 0 20px;  
+        text-align: center;  
+    }  
+      
+    .round-image {  
+        width: 100px; /* 或者其他尺寸 */  
+        height: 100px; /* 保持宽高一致 */  
+        border-radius: 50%; /* 圆形 */  
+        object-fit: cover; /* 确保图片覆盖整个容器 */  
+    }  
+      
+    .date {  
+        color: white;  
+        font-size: 32px; /* 超大字体 */  
+        background-color: red;  
+        padding: 10px 20px;  
+        border-radius: 5px; /* 轻微圆角 */  
+        margin-top: 10px;  
+    }</style>
+</head>  
+<body>  
+<div class="container">  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2022.7</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2022.8</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2022.7</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2022.8</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2022.9</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2022.10</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2022.11</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2022.12</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2023.1</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2023.2</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2023.3</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2023.4</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2023.5</div>  
+    </div>  
+    <div class="flip-item">  
+        <img src="image1.jpg" class="round-image">  
+        <div class="date">2023.6</div>  
+    </div>  
+    <div class="container">  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2022.7</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2022.8</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2022.7</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2022.8</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2022.9</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2022.10</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2022.11</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2022.12</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2023.1</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2023.2</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2023.3</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2023.4</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2023.5</div>  
+        </div>  
+        <div class="flip-item">  
+            <img src="image1.jpg" class="round-image">  
+            <div class="date">2023.6</div>  
+        </div>  
+</div>  
+  
+<!-- 可选: 添加JavaScript库用于横向翻页效果，这里不展示 -->  
+</body>  
+</html>
