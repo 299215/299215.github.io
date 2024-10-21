@@ -1,239 +1,29 @@
-<!DOCTYPE html>  
-<html lang="zh">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>粉色少女风格2024年9月日历</title>  
-<style>  
-@font-face {
-    font-family: mm;
-    src: url(6.ttf);
-}
-  body {  
-    font-family: mm, sans-serif;  
-    background-color: #f8d7da; /* 浅粉色背景 */  
-    display: flex;  
-    justify-content: center;  
-    align-items: center;  
-    height: 100vh;  
-    margin: 0;  
-  }  
-  
-  .calendar {  
-    background-color: #fff;  
-    border-radius: 10px;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
-    padding: 10px;  
-    width: 90%;  
-    max-width: 425px; /* 适配移动端屏幕 */  
-  }  
-  
-  .weekdays {  
-    display: flex;  
-    justify-content: space-around;  
-    margin-bottom: 10px;  
-  }  
-  
-  .weekdays div {  
-    flex: 1;  
-    text-align: center;  
-    font-weight: bold;  
-  }  
-  
-  .days {  
-    display: grid;  
-    grid-template-columns: repeat(7, 1fr);  
-    gap: 5px;  
-  }  
-  
-  .day {  
-    background-color: #ffe4e6; /* 浅粉色 */  
-    border-radius: 10px;  
-    padding: 7px;  
-    display: flex;  
-    flex-direction: column;  
-    align-items: center;  
-    justify-content: space-between;  
-  }  
-    .day1 {  
-    background-color: #ffffff; /* 浅粉色 */  
-    border-radius: 10px;  
-    padding: 7px;  
-    display: flex;  
-    flex-direction: column;  
-    align-items: center;  
-    justify-content: space-between;  filter: grayscale(1);
-  }  
-  
-  .day-number {  
-    font-size: 1.5em;  
-    font-weight: bold;  
-  }  
-  
-  .circle {  
-    width: 42px;  
-    height: 22px;  
-    background-color: red;  
-    border-radius: 50%;  
-    display: flex;  
-    align-items: center;  
-    justify-content: center;  
-    color: white;  
-    font-size: 13px;  
-  }  
-</style>  
-</head> 
-<div style="position: fixed;top: 28px;font-size: 20px;"><b>P式娱乐房2024年10月班次</b></div>
-<body>  
-   <br>
-<div class="calendar">  
-  <!--<div class="weekdays">  
-    <div>日</div>  
-    <div>一</div>  
-    <div>二</div>  
-    <div>三</div>  
-    <div>四</div>  
-    <div style="color: #f82323;">五</div>  
-    <div style="color: #f82323;">六</div>  
-  </div>  -->
-  <div class="days">   
-    <div class="day" style="opacity: 0;">  
-      <div class="day-number">1</div>  
-      <div class="circle">19:45</div>  
-    </div>  
-<div class="day" style="opacity: 0;">  
-      <div class="day-number">1</div>  
-      <div class="circle">19:45</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">1</div>  
-      <div class="circle">全天</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">2</div>  
-      <div class="circle">全天</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">3</div>  
-      <div class="circle">全天</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">4</div>  
-      <div class="circle">全天</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">5</div>  
-      <div class="circle">21:30</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">6</div>  
-      <div class="circle">21:30</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">7</div>  
-      <div class="circle">9:00</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">8</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">9</div>  
-      <div class="circle">19:45</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">10</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">11</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">12</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">13</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">14</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">15</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">16</div>  
-      <div class="circle">19:45</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">17</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">18</div>  
-      <div class="circle">21:30</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">19</div>  
-      <div class="circle">21:30</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">20</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">21</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">22</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">23</div>  
-      <div class="circle">19:45</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">24</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">25</div>  
-      <div class="circle">21:30</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">26</div>  
-      <div class="circle">21:30</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">27</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">28</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">29</div>  
-      <div class="circle">无</div>  
-    </div>  
-    <div class="day">  
-      <div class="day-number">30</div>  
-      <div class="circle">19:45</div>  
-    </div>  
-    <div class="day1">  
-      <div class="day-number">31</div>  
-      <div class="circle">无</div>  
-    </div>  
-    
-    <!-- 以此类推，填充整个9月的日期 -->  
-    <!-- 示例省略了其他日期，仅保留第一个 -->  
-    <!-- 注意：实际使用中需要完整填充9月的每一天 -->  
-  </div>  
-</div>  
-</body>  
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS 18 风格渐变背景</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3); /* 渐变颜色 */
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <h1>P式娱乐房</h1>
+</body>
 </html>

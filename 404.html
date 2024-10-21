@@ -1,61 +1,29 @@
 <!DOCTYPE html>
-<html leftmargin="0" topmargin="0" οncοntextmenu="return false" οndragstart="return false" onselectstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" ondragstart="return false;" oncontextmenu="return false;" align="center" style="font-family: system-ui, -apple-system, arial, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;cursor:default;color: #fff;background-color: #000;font-feature-settings: 'tnum';" >
-<head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" charset="utf-8">
-<title>404 - 页面不存在</title>
-<style>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS 18 风格渐变背景</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3); /* 渐变颜色 */
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
 
-</style>
-<script>
-  setcookie('param_cookie',0,10);
-</script>
-<script>
-  function body_onload()
-{
-    if(0 == getcookie('param_cookie')){
-        setcookie("param_cookie",1,10);
-        window.location.reload(true); 
-    }
-}
-</script>
-<script>
-  window.onload = function() {
-  // 阻止双击放大
-  var lastTouchEnd = 0;
-  document.addEventListener('touchstart', function(event) {
-    if (event.touches.length > 1) { event.preventDefault(); }
-  });
-  document.addEventListener('touchend', function(event) {
-    var now = (new Date()).getTime();
-    if (now - lastTouchEnd <= 300) { event.preventDefault(); }
-    lastTouchEnd = now;
-  }, false);
-  // 阻止双指放大
-  document.addEventListener('gesturestart', function(event) {
-    event.preventDefault();
-  });
-}
-</script>
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+    </style>
 </head>
-<body onLoad="body_onload()">
-<center><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-<br>
-<hr>
-<span style="color: rgb(9, 251, 9);">文件可能已经丢失</span><br><br><br></center>
-</body></html>
+<body>
+    <h1>404 Not Found</h1>
+</body>
+</html>
