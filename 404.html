@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iOS 18 风格渐变背景</title>
+    <title>404 Not Found</title>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3); /* 渐变颜色 */
-            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             color: white;
+            font-family: Arial, sans-serif;
             text-align: center;
         }
-
         h1 {
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            font-size: 10em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 1.5em;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.7);
         }
     </style>
 </head>
 <body>
-    <h1>404 Not Found</h1>
+    <h1>404</h1>
+    <p>Not Found</p>
+    <p>页面走丢了</p>
+    <footer>
+        Nginx is a high-performance web server and reverse proxy server, known for its scalability, stability, and low resource consumption, widely used for serving static content and load balancing.
+    </footer>
 </body>
 </html>
