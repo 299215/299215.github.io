@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>锦云幻月 王者荣耀</title>
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* 深黑背景 */
+    color: #f4f4f4; /* 浅色字体 */
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.avatar-container {
+    text-align: center;
+}
+
+.avatar {
+    width: 120px; /* 头像框宽度 */
+    height: 120px; /* 头像框高度 */
+    border-radius: 20px; /* 圆角 */
+    background-size: cover; /* 背景图填充 */
+    background-position: center; /* 背景图居中 */
+    border: 3px solid gold; /* 金色边框 */
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5); /* 金色阴影 */
+    transition: transform 0.3s; /* 鼠标悬停时的缩放效果 */
+}
+
+.avatar:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大 */
+}
+
+#general1 {
+    background-image: url('https://299215.github.io/wzry/a.jpg'); /* 替换为第一位大将军的图片路径 */
+}
+
+#general2 {
+    background-image: url('https://299215.github.io/wzry/b.jpg'); /* 替换为第二位将军的图片路径 */
+}
+
+.name {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold; /* 加粗字体 */
+    color: gold; /* 金色字体 */
+}
+
+.report {
+    background-color: #333; /* 深灰色背景 */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5); /* 金色阴影 */
+}
+
+p{font-size: 20px;text-shadow: 0 0 9px rgb(255, 217, 0);margin-top: 9px;}
+    </style>
+</head>
+<body><br><br>
+    <div class="container">
+        <div class="avatar-container">
+            <div class="avatar" id="general1"></div>
+            <div class="name">大将军<br>亚连</div>
+        </div>
+        <div class="avatar-container">
+            <div class="avatar" id="general2"></div>
+            <div class="name">二将军<br>艾琳</div>
+        </div>
+    </div>
+    <div class="report">
+        <h2>手QiOS: 锦云幻月</h2>
+        <p>入游赛季: S33闪耀亚洲</p>
+        <p>最高段位: 无双王者23星</p>
+        <p>巅峰赛最高分: 1528分</p>
+    </div>
+</body>
+<audio id="audio" src="https://299215.github.io/pvp/c.mp3" preload="auto" autoplay loop></audio>
+
+    <!--<script>
+        // 等待文档加载完成
+        window.onload = function() {
+            // 获取音频元素
+            var audio = document.getElementById('audio');
+            // 播放音频
+            audio.play().catch(function(error) {
+                console.error("播放失败:", error);
+            });
+        };
+    </script>-->
+</html>
