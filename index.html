@@ -75,9 +75,9 @@
             cursor: default;font-size: 23px;
         }
         #copyButton {
-            background-color: blue;
+            background-color: rgb(0, 89, 255);
             color: white;
-            padding: 10px 20px;
+            padding: 10px 43px;font-size: 22px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
@@ -156,7 +156,7 @@
             𝟖.游戏Bug:白狼王警上自爆后，第3天天亮必须核实开麦情况，无法开麦/没有麦序玩家为首夜倒牌，本局游戏按已出局算<br>
             •<br>
             进阶模式🥇娱乐房组织</p>
-            <button id="copyButton">复制内容</button>
+            <button id="copyButton">复制</button>
            
 
             <script>
@@ -164,11 +164,11 @@
                     const textToCopy = document.getElementById("fuzhi").innerText; // 获取<p>内的文本内容
                     navigator.clipboard.writeText(textToCopy) // 使用Clipboard API复制文本
                         .then(() => {
-                            alert("已复制房规"); // 复制成功提示
+                            alert("复制房规成功"); // 复制成功提示
                             
                         })
                         .catch(err => {
-                            console.error("房规复制失败"); // 复制失败提示
+                            console.error("复制房规失败"); // 复制失败提示
                         });
                 }
             </script>
@@ -337,7 +337,7 @@
         window.onload = updateDays;
     </script>
     <div style="position: fixed; bottom: 68px; left: 50%; transform: translateX(-50%); z-index: 7; background-color: rgb(0, 30, 129); color: rgb(255, 241, 249); padding: 5px 15px; margin: 0; line-height: 1.5; white-space: nowrap; font-size: 19px;border-radius: 11px;">
-    皮鞋头像任数: 33</div>
+    小站版本: 1.0.1.14</div>
 
     <div id="days" style="position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 7; background-color: rgb(129, 0, 39); color: rgb(255, 241, 249); padding: 5px 15px; margin: 0; line-height: 1.5; white-space: nowrap; font-size: 19px;border-radius: 11px;">
     </div>
