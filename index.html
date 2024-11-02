@@ -154,7 +154,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="box" style="background-color: #FF5733;margin-top: 46px;" onclick="showDiv('gameRules')">游戏房规</div>
+        <div class="box" style="background-color: #FF5733;margin-top: 46px;" onclick="showDiv('gameRules')">房规53.0</div>
         
         <div style="background-color: #3357FF;font-size: 59px;" class="timer"></div>
         <div class="box" style="background-color: #0da329;" id="shan">班次进行中</div>
@@ -190,7 +190,7 @@
                 endTime.setHours(21, 50, 0, 0); // 设置结束时间为 21:50:00  
       
                 if (now >= startTime && now <= endTime) {  
-                    div.style.display = 'block'; // 在指定时间范围内显示  
+                    div.style.display = 'flex'; // 在指定时间范围内显示  
                 } else {  
                     div.style.display = 'none'; // 在指定时间范围外隐藏  
                 }  
