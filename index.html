@@ -42,6 +42,18 @@
             font-size: 33px;
             cursor: default;
 
+        }     
+           .timer{
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 33px;
+            cursor: default;
+
         }
 
 
@@ -127,6 +139,12 @@
             color: #333; /* 字体颜色 */
             font-weight: bold; /* 字体加粗 */
         }
+        #shan{animation-name: shans;animation-duration: 1.5s;animation-iteration-count: infinite;}
+        @keyframes shans {
+            0%{opacity: 1;}
+            50%{opacity: 0.5;}
+            100%{opacity: 1;}
+        }
     </style>
         <script>
             document.addEventListener('contextmenu', function(e) {
@@ -136,27 +154,72 @@
 </head>
 <body>
     <div class="container">
-        <div class="box" style="background-color: #FF5733;margin-top: 46px;" onclick="showDiv('gameRules')">房规52.0</div>
-        <div class="box" style="background-color: #0da329;" onclick="showDiv('management')">管理层</div>
+        <div class="box" style="background-color: #FF5733;margin-top: 46px;" onclick="showDiv('gameRules')">游戏房规</div>
+        
+        <div style="background-color: #3357FF;font-size: 59px;" class="timer"></div>
+        <div class="box" style="background-color: #0da329;" id="shan">班次进行中</div>
+        <script>  
+            function pad(number) {  
+                return number < 10 ? '0' + number : number;  
+            }  
+      
+            function updateTime() {  
+                const now = new Date();  
+                const hours = pad(now.getHours());  
+                const minutes = pad(now.getMinutes());  
+                const formattedTime = `${hours}:${minutes}`;  
+                document.querySelector('.timer').textContent = formattedTime;  
+            }  
+      
+            // 初始化时间显示  
+            updateTime();  
+            // 每秒更新一次时间  
+            setInterval(updateTime, 1000);  
+        </script>  
+        <script>  
+            function updateDisplay() {  
+                const div = document.getElementById('shan');  
+                const now = new Date();  
+                const hours = now.getHours();  
+                const minutes = now.getMinutes();  
+      
+                const startTime = new Date();  
+                startTime.setHours(20, 15, 0, 0); // 设置开始时间为 20:15:00  
+      
+                const endTime = new Date();  
+                endTime.setHours(21, 50, 0, 0); // 设置结束时间为 21:50:00  
+      
+                if (now >= startTime && now <= endTime) {  
+                    div.style.display = 'block'; // 在指定时间范围内显示  
+                } else {  
+                    div.style.display = 'none'; // 在指定时间范围外隐藏  
+                }  
+            }  
+      
+            // 初始调用  
+            updateDisplay();  
+      
+            // 每分钟调用一次以更新显示状态  
+            setInterval(updateDisplay, 3000);  
+        </script>  
+        <!--<div class="box" style="background-color: #0da329;" onclick="showDiv('management')">管理层</div>
         <div class="box" style="background-color: #3357FF;" onclick="showDiv('newcomerGuide')">新人指南</div>
-        <div class="box" style="background-color: #FF33A6;" onclick="showDiv('werewolfGuide')">公会规章</div>
+        <div class="box" style="background-color: #FF33A6;" onclick="showDiv('werewolfGuide')">公会规章</div>-->
     </div>
 
     <div id="gameRules" class="fullscreen-div" style="justify-content: center;">
         <button class="close-btn" onclick="hideDiv()">返回</button>
         <h1>游戏房规</h1>
-        <p style="text-align: left;padding: 30px;" id="fuzhi">P式•守卫白狼王💎52.0<br>
-🔒禁止贴脸骂人<br>
-🔒禁止扣新手光环<br>
-🔒禁止怂/警下预(吞警徽除外)<br>
-🔒禁止场外信息/数据库<br>
-🔒禁止仇杀/仇毒<br>
-⛔️女巫不可开天毒<br>
-⛔️神/民警上穿预后必须弃选<br>
-⭐️单/双保机制正式运行<br>
-⭐️单/双保可在开局主动放弃<br>
-Ⓜ️点杀由K3以上高管判决<br>
-📵交牌由K2以上高管判决</p>
+        <p style="text-align: left;padding: 30px;" id="fuzhi">P式•守卫白狼王💎53.0<br>
+            ⑴禁止贴脸骂人<br>
+            ⑵禁止警下预/怂预(吞警徽除外)<br>
+            ⑶禁止夜间送礼<br>
+            ⑷禁止仇杀仇毒<br>
+            ⑸禁止恶意黑麦<br>
+            ⑹禁止场外信息<br>
+            ⑺无翻枪，无底牌压制<br>
+            ⑻无点杀，违规直接判交牌<br>
+            ⑼ 2024年11月1日铭记皮鞋违规</p>
             <button id="copyButton">复制</button>
            
 
@@ -175,6 +238,7 @@
             </script>
     </div>
 
+<!--
     <div id="management" class="fullscreen-div" style="overflow: scroll;">
         <button class="close-btn" onclick="hideDiv()">返回</button>
         <h1>管理层</h1>
@@ -297,7 +361,7 @@
               <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;群聊内吵架者管理应进行劝架或劝其转移阵地处理，如仍旧拒绝者，视情况对其进行12小时以上，30天以下禁言处理。
               <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;群聊内发布违法信息者，撤回并禁言30天处理，情节严重的将被永久踢出甚至报案处理。</span></p>
     </div>
-
+-->
     <script>
         function showDiv(id) {
             const divs = document.querySelectorAll('.fullscreen-div');
@@ -320,7 +384,7 @@
     <script>
         // 计算从2022年7月2日到今天的天数
         function calculateDays() {
-            const startDate = new Date('2022/07/02');
+            const startDate = new Date('2022/07/01');
             const currentDate = new Date();
             const timeDifference = currentDate - startDate;
             const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -338,7 +402,7 @@
         window.onload = updateDays;
     </script>
     <div style="position: fixed; bottom: 68px; left: 50%; transform: translateX(-50%); z-index: 7; background-color: rgb(0, 30, 129); color: rgb(255, 241, 249); padding: 5px 15px; margin: 0; line-height: 1.5; white-space: nowrap; font-size: 19px;border-radius: 11px;">
-    小站版本: 1.0.1.16</div>
+    进阶模式第一娱乐房组织</div>
 
     <div id="days" style="position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 7; background-color: rgb(129, 0, 39); color: rgb(255, 241, 249); padding: 5px 15px; margin: 0; line-height: 1.5; white-space: nowrap; font-size: 19px;border-radius: 11px;">
     </div>
