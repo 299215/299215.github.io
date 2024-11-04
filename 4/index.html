@@ -1,0 +1,121 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<meta name="user-scalable" content="no">
+
+    <title>施虐器</title>  
+    <style>  
+        body, html {  
+            margin: 0;  
+            padding: 2px;  
+            width: 100%;  
+            height: 100%;  
+            display: block;  
+            flex-direction: column;  
+            align-items: center; /* 容器内容左上角对齐 */  
+            justify-content: center;  
+            box-sizing: border-box;  
+            font-family: Arial, sans-serif;  
+        }  
+        .circle-container {  
+            display: flex;  background-color: #ffffff;
+            flex-wrap: wrap;  width: 327px;align-items: center;margin-top: 39px;
+            margin-bottom: 20px; /* 与fixed按钮留出间距 */  
+        }  
+        .circle {  
+            width: 47px;  
+            height: 47px;  
+            border-radius: 50%; /* 圆形 */  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            font-size: 31px;  
+            color: white;  
+            margin-right: 7px; /* 圆圈之间的间距 */  
+            margin-bottom: 9px; /* 圆圈之间的垂直间距 */  
+            background-color: red; /* 默认失败颜色 */  
+        }  
+        .fixed-button {  
+            position: fixed;  
+            bottom: 20px;  
+            left: 50%;  
+            transform: translateX(-50%);  
+            width: 200px;  
+            height: 50px;  
+            border: none;  
+            border-radius: 10px;  
+            background-color: #007BFF;  
+            color: white;  
+            font-size: 20px;  
+            cursor: pointer;  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+        }  
+    </style>  
+</head>  
+<body>  <center>
+    <div class="circle-container" id="circleContainer"></div>  
+    <button class="fixed-button" id="drawButton">点击虐待皮鞋</button>  
+  </center>
+    <audio id="failSound" src="1.mp3" preload="auto"></audio>  
+    <audio id="successSound" src="2.mp3" preload="auto"></audio>  
+  <audio autoplay loop src="https://er-sycdn.kuwo.cn/aea13f9c27f067db43cf10c2c9236fa3/67289ad0/resource/30106/trackmedia/M800002vjhdO2u8EXq.mp3"></audio>
+    <script>  
+        let successRate = 0.0045; // 前15次的成功率  
+        let guaranteeSuccessAt = 16; // 第16次100%成功  
+        let currentAttempt = 0; // 当前尝试次数  
+  
+        document.getElementById('drawButton').addEventListener('click', function() {  
+            const container = document.getElementById('circleContainer');  
+            container.innerHTML = ''; // 清空之前的圆圈  
+  
+            // 进行抽奖尝试  
+            currentAttempt++;  
+            let isSuccess = false;  
+  
+            if (currentAttempt === guaranteeSuccessAt) {  
+                isSuccess = true; // 第16次必中  
+            } else {  
+                isSuccess = Math.random() < successRate; // 根据成功率随机决定是否中奖  
+            }  
+  
+            // 生成圆圈并添加到容器中  
+            for (let i = 1; i <= currentAttempt; i++) {  
+                const circle = document.createElement('div');  
+                circle.className = 'circle';  
+                circle.textContent = i;  
+  
+                // 根据是否中奖设置圆圈颜色  
+                if (isSuccess && i === currentAttempt) {  
+                    circle.style.backgroundColor = 'green';  
+                    // 播放成功音效  
+                    const successSound = document.getElementById('successSound');  
+                    successSound.play();  
+                } else {  
+                    // 播放失败音效（非最后一次尝试时）  
+                    if (i !== currentAttempt) {  
+                        // 注意：这里不播放当前尝试（即最后一次）的失败音效，因为可能是成功  
+                        const failSound = document.getElementById('failSound');  
+                        failSound.pause(); // 确保之前播放的音效停止  
+                        failSound.currentTime = 0; // 重置音效到开头  
+                        failSound.play();  
+                    }  
+                }  
+  
+                // 添加到容器中  
+                container.appendChild(circle);  
+  
+             
+            }  
+  
+            // 如果中奖了，则重置尝试次数（为下一次抽奖做准备）  
+            if (isSuccess) {  
+                currentAttempt = 0; // 重置为0，下次抽奖从1开始计数  
+            }  
+        });  
+    </script>  
+</body>  
+</html>
