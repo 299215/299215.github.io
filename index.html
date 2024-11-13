@@ -130,8 +130,151 @@
             <span id="days" style="font-size: 67px;"></span><span style="font-size: 22px;">天</span>
         </div>
     </div>
-    <div class="button-container" style="margin-top: 44px;">
-        <button class="circle-button" onclick="openModal()">房规</button>
+
+
+     <style>
+        /* 圆形按钮样式 */
+        .button {
+            width: 88px;
+            height: 88px;
+            border-radius: 7px;
+            background-color: #990234;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            border: none;
+            cursor: default;display: inline-block;justify-items: center;align-items: center;align-self: center;align-content: center;align-tracks: calc(center);
+            margin: 10px;overflow: hidden;box-sizing: border-box;
+        }
+
+        /* 隐藏p标签 */
+        p {
+            display: none;
+        }
+    </style>
+
+    <!-- 圆形按钮 --><center><h1>游戏房规复制</h1>
+    <div class="button" onclick="copyContent(1)"><span style="font-size: 44px;">1</span><br>机械狼</div>
+    <div class="button" onclick="copyContent(2)"><span style="font-size: 44px;">2</span><br>失踪的宝物</div>
+    <div class="button" onclick="copyContent(3)"><span style="font-size: 44px;">3</span><br>狼神对决</div>
+    <div class="button" onclick="copyContent(4)"><span style="font-size: 44px;">4</span><br>爱神</div>
+    <div class="button" onclick="copyContent(5)"><span style="font-size: 44px;">5</span><br>守卫白狼王</div>
+    <div class="button" onclick="copyContent(6)"><span style="font-size: 44px;">6</span><br>白神</div>
+    <div class="button" onclick="copyContent(7)"><span style="font-size: 44px;">7</span><br>五神大乱斗</div>
+    <div class="button" onclick="copyContent(8)"><span style="font-size: 44px;">8</span><br>月影传说</div>
+    <div class="button" onclick="copyContent(9)"><span style="font-size: 44px;">9</span><br>十二人内战</div>
+
+
+
+
+
+</center>
+    <!-- 隐藏的p标签 -->
+    <p id="p1">P式•机械狼💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵禁止警下预/怂预<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁止场外信息<br>
+        ⑺插麦适度，打字自由<br>
+        ⑻无点杀，违规直接判交牌</p>
+    <p id="p2">P式•失踪的宝物💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵禁止盗宝沾边<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁止场外信息<br>
+        ⑺插麦适度，打字自由<br>
+        ⑻好→三→狼→好</p>
+    <p id="p3">P式•狼神对决💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵禁止怂预(倒牌除外)<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁止场外信息<br>
+        ⑺插麦适度，打字自由<br>
+        ⑻无点杀，违规直接判交牌</p>
+    <p id="p4">P式•爱神💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵禁止警下预/怂预<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁止场外信息<br>
+        ⑺插麦适度，打字自由<br>
+        ⑻好→三→狼→好</p>
+    <p id="p5">P式•守卫白狼王💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵禁止警下预/怂预(吞警徽除外)<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁止场外信息<br>
+        ⑺插麦适度，打字自由<br>
+        ⑻无点杀，违规直接判交牌</p>
+    <p id="p6">P式•白神💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵禁止警下预/怂预<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁止场外信息<br>
+        ⑺插麦适度，打字自由<br>
+        ⑻无点杀，违规直接判交牌</p>
+    <p id="p7">P式•五神大乱斗💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵好人阵营禁止怂预(无预除外)<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁止场外信息<br>
+        ⑺插麦适度，打字自由<br>
+        ⑻无点杀，违规直接判交牌</p>
+    <p id="p8">P式•月影传说💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵好人阵营禁止怂预(无预除外)<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁止场外信息<br>
+        ⑺插麦适度，打字自由<br>
+        ⑻无点杀，违规直接判交牌</p>
+    <p id="p9">P式•十二人内战💎53.1<br>
+        ⑴禁止贴脸骂人<br>
+        ⑵禁止警下预/怂预(吞警徽除外)<br>
+        ⑶禁止夜间送礼<br>
+        ⑷禁止仇杀仇毒<br>
+        ⑸禁止恶意黑麦<br>
+        ⑹禁攻击性场外信息<br>
+        ⑺插麦打字自由<br>
+        ⑻违规判交牌并禁赛</p>
+    <script>
+        function copyContent(id) {
+            // 获取对应的<p>标签的HTML内容
+            var content = document.getElementById("p" + id).innerHTML;
+
+            // 替换<br>标签为换行符
+            content = content.replace(/<br\s*\/?>/gi, '\n');
+
+            // 创建一个textarea元素用于复制
+            var textarea = document.createElement("textarea");
+            textarea.value = content;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+
+            // 弹出提示
+            alert("复制成功，可前往游戏粘贴");
+        }
+    </script>
+
+
+    <!--<div class="button-container" style="margin-top: 44px;">
+        <button class="circle-button" onclick="openModal()">房规</div>
     </div>
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -147,7 +290,7 @@
                 ⑹禁止场外信息<br>
                 ⑺无翻枪，无底牌压制<br>
                 ⑻无点杀，违规直接判交牌</p>
-                <button id="copyButton">复制</button>
+                <button id="copyButton">复制</div>
                
     
                 <script>
@@ -166,7 +309,7 @@
         </div>
     </div>
     <div class="overlay" onclick="closeModalIfOverlayClicked()"></div>
-    <p id="close-hint">进阶模式第一娱乐房组织</p>
+    --><p id="close-hint">进阶模式第一娱乐房组织</p>
     <script>function calculateDaysSince(startDate) {
         const today = new Date();
         const diffInMilliseconds = today - startDate;
