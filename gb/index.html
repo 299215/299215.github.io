@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html align="center" style="cursor:default;" leftmargin="0" topmargin="0" οncοntextmenu="return false" οndragstart="return false" onselectstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" ondragstart="return false;" oncontextmenu="return false;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫酷页面</title>
+    <style>
+ html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #d8bff3 0%, #c792ea 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .header, .footer {
+            font-size: 24px;
+            margin: 50px 0;
+        }
+
+        .crystal {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 
+                        0 0 40px rgba(255, 255, 255, 0.5), 
+                        0 0 60px rgba(255, 255, 255, 0.5), 
+                        0 0 80px rgba(255, 255, 255, 0.5), 
+                        0 0 100px rgba(255, 255, 255, 0.5);
+        }
+
+        .crystal::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 -20px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .crystal::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 20px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .number {
+            font-size: 108px;
+            font-weight: bold;
+            color: #ffdfef;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.7), 
+                         0 0 20px rgba(255, 105, 180, 0.7), 
+                         0 0 30px rgba(255, 105, 180, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">本月支出限额剩余</div>
+    <div class="crystal">
+        <div class="number">88</div>
+    </div>
+    <div class="footer">2024年12月</div>
+</body>
+</html>
