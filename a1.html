@@ -45,17 +45,12 @@ html {
    font-weight: normal;
    
 }
-@keyframes tmd {
-   0%{opacity: 0;}
-   40%{opacity: 0;}
-   100%{opacity: 1;} 
-}
+
     body {
 margin: 0;
 padding: 0;
 
 color: #fff;
-animation-name: tmd;animation-duration: 0.9s;
 height: 100%;
     }
     
@@ -180,11 +175,11 @@ font-size: 1rem;
      <style>
 /* 圆形按钮样式 */
 
-    #vvv{color: #52ff6f; border-radius: 7px;font-size: 44px;
+    .vvv{color: #fcff52; border-radius: 7px;font-size: 30px;
     text-align: center;
-border: 5px solid #52ff6f;border-radius: 19px;margin: 14px;left: 0;right: 0;
+border: 5px solid #fcff52;border-radius: 19px;margin: 14px;left: 0;right: 0;
 width: 266px;
-height: 100px;
+height: 71px;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -229,15 +224,56 @@ p {
         }
     </style>
 
-     <center><span style="font-size: 39px;">P式娱乐房</span><br><span style="font-size: 25px;">进阶模式第一娱乐房组织</span><hr>
+     <center><span style="font-size: 39px;">P式娱乐房</span><br><span style="font-size: 25px;">班次表</span><hr>
         <br>
-        <div class="button" onclick="copyContent(5)" id="vvv">房规复制</div>
-        <div id="vvv" class="xz1" style="border: 5px solid #ffe552;color: #ffe552;">班次表</div>
-        <div id="vvv" class="xz2" style="border: 5px solid #1cd2ff;color: #1cd2ff;">公告栏</div>
-
-<br><br><hr>小站版本: 3.0.0<br>维护者: Pixel<br>代码编写者: Pixel<br>QQ群: 706230911<br>狼人杀公会号: 299215
-
-<!-- 圆形按钮    <div class="button" onclick="copyContent(1)"><span style="font-size: 44px;">1</span><br>机械狼</div>vvv
+       
+        <div class="vv4"></div>
+<br><br><br><br><br><br><br>
+<script>
+    function generateDate() {
+      const div = document.querySelector('.vv4');
+      let count = 0;
+      let currentDate = new Date(); // 获取当前日期
+    
+      while (count < 18) {
+        // 如果日期在1月15日到2月15日或7月8日到8月29日之间，生成日期
+        if ((currentDate >= new Date(2025, 0, 15) && currentDate <= new Date(2025, 1, 15)) ||
+            (currentDate >= new Date(2025, 6, 8) && currentDate <= new Date(2025, 7, 29)) ||
+            (currentDate >= new Date(2025, 9, 1) && currentDate <= new Date(2025, 9, 7))||
+            (currentDate >= new Date(2026, 0, 15) && currentDate <= new Date(2026, 1, 15)) ||
+            (currentDate >= new Date(2026, 6, 8) && currentDate <= new Date(2026, 7, 29)) ||
+            (currentDate >= new Date(2026, 9, 1) && currentDate <= new Date(2026, 9, 7))) {
+          const dateString = `${currentDate.getMonth() + 1}月${currentDate.getDate()}日 20:15`;
+          const newDiv = document.createElement('div');
+          newDiv.className = 'vvv';
+          newDiv.textContent = dateString;
+          div.appendChild(newDiv);
+    
+          count++;
+        } else {
+          // 如果日期不在指定区间内且是周三、周五、周六，也生成日期
+          if (currentDate.getDay() === 3 || currentDate.getDay() === 5 || currentDate.getDay() === 6) {
+            const dateString = `${currentDate.getMonth() + 1}月${currentDate.getDate()}日 20:15`;
+            const newDiv = document.createElement('div');
+            newDiv.className = 'vvv';
+            newDiv.textContent = dateString;
+            div.appendChild(newDiv);
+    
+            count++;
+          }
+        }
+    
+        currentDate.setDate(currentDate.getDate() + 1); // 逐日递增
+      }
+    }
+    
+    generateDate();
+    </script>
+<!-- 圆形按钮 <div id="vvv" style="border: 5px solid #ffe552;color: #ffe552;">星期五20:15</div>
+        <div id="vvv" style="border: 5px solid #ffe552;color: #ffe552;">星期六20:15</div>
+        <div id="vvv" style="border: 5px solid #ffe552;color: #ffe552;">法定节假日20:15</div>
+        <div id="vvv" style="border: 5px solid #ffe552;color: #ffe552;">星期五20:15</div>
+   <div class="button" onclick="copyContent(1)"><span style="font-size: 44px;">1</span><br>机械狼</div>vvv
     <div class="button" onclick="copyContent(2)"><span style="font-size: 44px;">2</span><br>失踪的宝物</div>
     <div class="button" onclick="copyContent(3)"><span style="font-size: 44px;">3</span><br>狼神对决</div>
     <div class="button" onclick="copyContent(4)"><span style="font-size: 44px;">4</span><br>爱神</div>
@@ -248,48 +284,10 @@ p {
     <div class="button" onclick="copyContent(9)"><span style="font-size: 44px;">9</span><br>十二人内战</div>-->
 
 
-    <div class="iframe-container" id="iframe1">
-        <button class="close-btn" onclick="closeIframe('iframe1')">返回</button>
-        <iframe src="a1.html" id="if1"></iframe>
-    </div>
-    
-    <div class="iframe-container" id="iframe2">
-        <button class="close-btn" onclick="closeIframe('iframe2')">返回</button>
-        <iframe src="a2.html" id="if2"></iframe>
-    </div>
-    
-    <script>
-        // 预先加载 iframe 的内容
-        document.addEventListener("DOMContentLoaded", function () {
-            // You can optionally fetch data or handle on DOMContentLoaded if needed
-        });
-    
-        document.querySelector('.xz1').onclick = function() {
-            document.getElementById('iframe1').classList.add('show');
-        };
-        document.querySelector('.xz2').onclick = function() {
-            document.getElementById('iframe2').classList.add('show');
-        };
-    
-        function closeIframe(id) {
-            document.getElementById(id).classList.remove('show');
-        }
-    </script>
 
 </center>
     <!-- 隐藏的p标签 -->
     
-    <p id="p5">P式•守卫白狼王🌙54.1<br>
-        💎全程禁止任何贴脸骂人<br>
-        💎禁止警下预/怂预(吞警徽除外)<br>
-        💎存活玩家禁止夜间送礼<br>
-        💎严禁任何人进行仇杀仇毒<br>
-        💎禁止恶意黑麦<br>
-        💎禁止场外信息/配置绑架<br>
-        💎插麦打字自由(注意适度)<br>
-        💎禁止无理由底牌压制<br>
-        ⭐️游戏Bug: 当白狼王警上自爆后，天亮时核查现场玩家开麦情况，无法开麦玩家视为已出局<br>
-        ⭐️房员有权根据房规申请交牌</p>
     
     <script>
 function copyContent(id) {
@@ -312,44 +310,6 @@ function copyContent(id) {
 }
     </script>
 
-
-    <!--<div class="button-container" style="margin-top: 44px;">
-<button class="circle-button" onclick="openModal()">房规</div>
-    </div>
-    <div id="modal" class="modal">
-<div class="modal-content">
-    <span class="close-button" onclick="closeModal()" style="font-size: 50px;position: absolute;right: 11px;top: 0px;">&times;</span>
-    
-    <h1>游戏房规</h1>
-    <p style="text-align: left;padding: 30px;" id="fuzhi">P式•守卫白狼王💎53.0<br>
-⑴禁止贴脸骂人<br>
-⑵禁止警下预/怂预(吞警徽除外)<br>
-⑶禁止夜间送礼<br>
-⑷禁止仇杀仇毒<br>
-⑸禁止恶意黑麦<br>
-⑹禁止场外信息<br>
-⑺无翻枪，无底牌压制<br>
-⑻无点杀，违规直接判交牌</p>
-<button id="copyButton">复制</div>
-       
-    
-<script>
-    document.getElementById("copyButton").onclick = function() {
-const textToCopy = document.getElementById("fuzhi").innerText; // 获取<p>内的文本内容
-navigator.clipboard.writeText(textToCopy) // 使用Clipboard API复制文本
-    .then(() => {
-alert("复制成功 版本: 53.0"); // 复制成功提示
-
-    })
-    .catch(err => {
-console.error("复制房规失败"); // 复制失败提示
-    });
-    }
-</script>
-</div>
-    </div>
-    <div class="overlay" onclick="closeModalIfOverlayClicked()"></div>
-    --><p id="close-hint">进阶模式第一娱乐房组织</p>
     <script>function calculateDaysSince(startDate) {
 const today = new Date();
 const diffInMilliseconds = today - startDate;
