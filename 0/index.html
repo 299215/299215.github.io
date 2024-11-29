@@ -246,15 +246,15 @@ p {
             border: none;
         }
         .close-btn {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
+            position: absolute;border-radius: 10px;
+            bottom: 24px;
+            right: 26px;
+            padding: 14px 20px;
             background-color: red;
             color: white;
             border: none;
-            cursor: pointer;
-            font-size: 16px;
+            cursor: default;
+            font-size: 23px;
         }
     </style>
 
@@ -264,17 +264,7 @@ p {
         <div id="vvv" class="xz1" style="border: 5px solid #ffe552;color: #ffe552;">班次表</div>
         <div id="vvv" class="xz2" style="border: 5px solid #1cd2ff;color: #1cd2ff;">公告栏</div>
 
-<br><br><hr>小站版本: 3.1.0<br>维护者: Pixel<br>代码编写者: Pixel<br>QQ群: 706230911<br>狼人杀公会号: 299215<br><br><br><br>
-
-<!-- 圆形按钮    <div class="button" onclick="copyContent(1)"><span style="font-size: 44px;">1</span><br>机械狼</div>vvv
-    <div class="button" onclick="copyContent(2)"><span style="font-size: 44px;">2</span><br>失踪的宝物</div>
-    <div class="button" onclick="copyContent(3)"><span style="font-size: 44px;">3</span><br>狼神对决</div>
-    <div class="button" onclick="copyContent(4)"><span style="font-size: 44px;">4</span><br>爱神</div>
-    
-    <div class="button" onclick="copyContent(6)"><span style="font-size: 44px;">6</span><br>白神</div>
-    <div class="button" onclick="copyContent(7)"><span style="font-size: 44px;">7</span><br>五神大乱斗</div>
-    <div class="button" onclick="copyContent(8)"><span style="font-size: 44px;">8</span><br>月影传说</div>
-    <div class="button" onclick="copyContent(9)"><span style="font-size: 44px;">9</span><br>十二人内战</div>-->
+<br><br><hr>小站版本: 3.1.1<br>维护者: Pixel<br>代码编写者: Pixel<br>QQ群: 706230911<br>狼人杀公会号: 299215<br><br><br><br>
 
 
     <div class="iframe-container" id="iframe1">
@@ -309,16 +299,16 @@ p {
     <!-- 隐藏的p标签 -->
     
     <p id="p5">P式•守卫白狼王🌙54.1<br>
-        💎全程禁止任何贴脸骂人<br>
-        💎禁止警下预/怂预(吞警徽除外)<br>
-        💎存活玩家禁止夜间送礼<br>
-        💎严禁任何人进行仇杀仇毒<br>
-        💎禁止恶意黑麦<br>
-        💎禁止场外信息/配置绑架<br>
-        💎插麦打字自由(注意适度)<br>
-        💎禁止无理由底牌压制<br>
-        ⭐️游戏Bug: 当白狼王警上自爆后，天亮时核查现场玩家开麦情况，无法开麦玩家视为已出局<br>
-        ⭐️房员有权根据房规申请交牌</p>
+💎全程禁止任何贴脸骂人<br>
+💎禁止警下预/怂预(吞警徽除外)<br>
+💎存活玩家禁止夜间送礼<br>
+💎严禁任何人进行仇杀仇毒<br>
+💎禁止恶意黑麦<br>
+💎禁止场外信息/配置绑架<br>
+💎插麦打字自由(注意适度)<br>
+💎禁止无理由底牌压制<br>
+⭐️游戏Bug: 当白狼王警上自爆后，天亮时核查现场玩家开麦情况，无法开麦玩家视为已出局<br>
+⭐️房员有权根据房规申请交牌</p>
     
     <script>
 function copyContent(id) {
@@ -342,43 +332,7 @@ function copyContent(id) {
     </script>
 
 
-    <!--<div class="button-container" style="margin-top: 44px;">
-<button class="circle-button" onclick="openModal()">房规</div>
-    </div>
-    <div id="modal" class="modal">
-<div class="modal-content">
-    <span class="close-button" onclick="closeModal()" style="font-size: 50px;position: absolute;right: 11px;top: 0px;">&times;</span>
     
-    <h1>游戏房规</h1>
-    <p style="text-align: left;padding: 30px;" id="fuzhi">P式•守卫白狼王💎53.0<br>
-⑴禁止贴脸骂人<br>
-⑵禁止警下预/怂预(吞警徽除外)<br>
-⑶禁止夜间送礼<br>
-⑷禁止仇杀仇毒<br>
-⑸禁止恶意黑麦<br>
-⑹禁止场外信息<br>
-⑺无翻枪，无底牌压制<br>
-⑻无点杀，违规直接判交牌</p>
-<button id="copyButton">复制</div>
-       
-    
-<script>
-    document.getElementById("copyButton").onclick = function() {
-const textToCopy = document.getElementById("fuzhi").innerText; // 获取<p>内的文本内容
-navigator.clipboard.writeText(textToCopy) // 使用Clipboard API复制文本
-    .then(() => {
-alert("复制成功 版本: 53.0"); // 复制成功提示
-
-    })
-    .catch(err => {
-console.error("复制房规失败"); // 复制失败提示
-    });
-    }
-</script>
-</div>
-    </div>
-    <div class="overlay" onclick="closeModalIfOverlayClicked()"></div>
-    --><p id="close-hint">进阶模式第一娱乐房组织</p>
     <script>function calculateDaysSince(startDate) {
 const today = new Date();
 const diffInMilliseconds = today - startDate;
