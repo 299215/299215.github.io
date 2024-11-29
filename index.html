@@ -2,44 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>加载中......</title>
+<title>P式娱乐房公会小站</title>
+<style>iframe{width: 100%;height: 100%;position: fixed;top:0px;left:0px;z-index: 5;border: none;}html{background-color: rgb(255, 255, 255);}</style>
 </head>
-<body>
-
+<body>LOADING...
 <script>
-// 清除所有cookie
-function clearAllCookies() {
-    document.cookie.split(";").forEach(function(c) {
-        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-    });
-}
+    // 获取当前时间戳
+    var timestamp = new Date().getTime();
 
-// 清除本地存储数据
-function clearLocalStorage() {
-    localStorage.clear();
-}
+    // 创建一个包含随机参数的 URL
+    var url = "https://299215.github.io/0/index.html?timestamp=" + timestamp;
 
-// 清除会话存储数据
-function clearSessionStorage() {
-    sessionStorage.clear();
-}
+    // 创建 iframe 元素
+    var iframe = document.createElement('iframe');
 
-// 清空数据并跳转到指定页面
-function clearDataAndRedirect(url) {
-    clearAllCookies();
-    clearLocalStorage();
-    clearSessionStorage();
-    setTimeout(function() {
-        window.location.href = url;
-    }, 900);
-}
+    // 设置 iframe 的 src 属性为带有随机参数的 URL
+    iframe.src = url;
 
-// 清空数据并跳转到 /0/ 目录下
-clearDataAndRedirect('https://299215.github.io/0/');
-
+    // 将 iframe 添加到文档中
+    document.body.appendChild(iframe);
 </script>
-
 </body>
 </html>
