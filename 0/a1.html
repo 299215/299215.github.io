@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: #000000;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>P式娱乐房公会小站</title>
+    <script>
+        // 检查字体加载状态
+        function checkFontLoaded() {
+            var fontCheck = document.createElement('span');
+            fontCheck.style.fontFamily = 'Roboto, sans-serif';
+            fontCheck.textContent = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            document.body.appendChild(fontCheck);
+
+            // 判断字体是否加载完成
+            var fontLoaded = fontCheck.offsetWidth > 0;
+            document.body.removeChild(fontCheck);
+
+            return fontLoaded;
+        }
+
+        // 等待字体加载完成后显示页面内容
+        function waitForFonts() {
+            var checkInterval = setInterval(function() {
+                if (checkFontLoaded()) {
+                    document.body.style.visibility = 'visible'; // 字体加载完成后显示内容
+                    clearInterval(checkInterval); // 停止检测
+                    console.log('字体加载完成');
+                }
+            }, 100); // 每100ms检查一次字体是否加载完成
+        }
+
+        // 页面加载完成后开始检测字体加载状态
+        window.onload = function() {
+            console.log('所有资源加载完毕');
+            waitForFonts();
+        };
+    </script>
+    <style>
+@import url('https://static.zeoseven.com/zsft/161/main/result.css');
+
+html {
+   font-family: "Sarasa Gothic SC";
+   font-weight: normal;
+   
+}
+
+    body {
+margin: 0;
+padding: 0;
+
+color: #fff;
+height: 100%;
+    }
+    
+    .top-section {
+background-color: #da0054;color: #fff;
+border-radius: 19px;margin: 20px;left: 0;right: 0;
+width: 309px;
+height: 144px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center; /* Adjust size based on viewport width */
+    }
+
+    .days-container {
+position: relative;
+    }
+    
+    .days-container span:first-child {
+font-size: 59px; /* Larger than the "天" character */
+    }
+    
+    .days-container span:last-child {
+position: absolute;
+bottom: 0;
+right: 0;
+font-size: 2vw; /* Smaller than the main number */
+    }
+    
+    .button-container {
+margin-top: auto;
+text-align: center;
+width: 100%;
+    }
+    
+    .circle-button {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background-color: #ff6347; /* Tomato color */
+color: white;
+border: none;
+font-size: 1.5rem;
+cursor: default;
+margin-bottom: 20px;
+    }
+    
+    .modal {
+display: none; 
+position: fixed; 
+z-index: 1; 
+left: 0;
+top: 0;
+width: 100%; 
+height: 100%; 
+overflow: auto; 
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4); 
+    }
+    
+    .modal-content {
+margin: 15% auto;
+margin-top: 23%;
+padding: 20px;
+border: 1px solid #888;
+width: 80%; 
+max-width: 600px;
+text-align: center;
+position: relative;
+    }
+    
+    .close-button {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+    }
+    
+    .close-button:hover,
+    .close-button:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+    }
+    
+    .overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.5);
+z-index: 2;
+    }
+    #copyButton {
+    background-color: rgb(0, 89, 255);
+    color: white;
+    padding: 10px 43px;font-size: 22px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+    #close-hint {
+position: fixed;
+bottom: 10px;
+width: 100%;
+text-align: center;
+color: #aaa;
+font-size: 1rem;
+    }</style>
+</head>
+<body><center>
+    <div class="top-section">
+<div class="days-container"><span style="font-size: 27px;">我们已经成立了</span><br>
+    <span id="days" style="font-size: 67px;">879</span><span style="font-size: 22px;">天</span>
+</div>
+    </div>
+</center>
+
+     <style>
+/* 圆形按钮样式 */
+
+    .vvv{color: #fcff52; border-radius: 7px;font-size: 30px;
+    text-align: center;
+border: 5px solid #fcff52;border-radius: 19px;margin: 14px;left: 0;right: 0;
+width: 266px;
+height: 71px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center; cursor: default;justify-items: center;align-items: center;align-self: center;align-content: center;align-tracks: calc(center);
+    overflow: hidden;box-sizing: border-box;}
+/* 隐藏p标签 */
+p {
+    display: none;
+}
+.iframe-container {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: left 0.5s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .iframe-container.show {
+            left: 0;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .close-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+
+     <center><span style="font-size: 39px;">P式娱乐房</span><br><span style="font-size: 25px;">班次表</span><hr>
+        <br>
+       
+        <div class="vv4"></div>
+<br><br><br><br><br><br><br>
+<script>
+    function generateDate() {
+      const div = document.querySelector('.vv4');
+      let count = 0;
+      let currentDate = new Date(); // 获取当前日期
+    
+      while (count < 18) {
+        // 如果日期在1月15日到2月15日或7月8日到8月29日之间，生成日期
+        if ((currentDate >= new Date(2025, 0, 15) && currentDate <= new Date(2025, 1, 15)) ||
+            (currentDate >= new Date(2025, 6, 8) && currentDate <= new Date(2025, 7, 29)) ||
+            (currentDate >= new Date(2025, 9, 1) && currentDate <= new Date(2025, 9, 7))||
+            (currentDate >= new Date(2026, 0, 15) && currentDate <= new Date(2026, 1, 15)) ||
+            (currentDate >= new Date(2026, 6, 8) && currentDate <= new Date(2026, 7, 29)) ||
+            (currentDate >= new Date(2026, 9, 1) && currentDate <= new Date(2026, 9, 7))) {
+          const dateString = `${currentDate.getMonth() + 1}月${currentDate.getDate()}日 20:15`;
+          const newDiv = document.createElement('div');
+          newDiv.className = 'vvv';
+          newDiv.textContent = dateString;
+          div.appendChild(newDiv);
+    
+          count++;
+        } else {
+          // 如果日期不在指定区间内且是周三、周五、周六，也生成日期
+          if (currentDate.getDay() === 3 || currentDate.getDay() === 5 || currentDate.getDay() === 6) {
+            const dateString = `${currentDate.getMonth() + 1}月${currentDate.getDate()}日 20:15`;
+            const newDiv = document.createElement('div');
+            newDiv.className = 'vvv';
+            newDiv.textContent = dateString;
+            div.appendChild(newDiv);
+    
+            count++;
+          }
+        }
+    
+        currentDate.setDate(currentDate.getDate() + 1); // 逐日递增
+      }
+    }
+    
+    generateDate();
+    </script>
+<!-- 圆形按钮 <div id="vvv" style="border: 5px solid #ffe552;color: #ffe552;">星期五20:15</div>
+        <div id="vvv" style="border: 5px solid #ffe552;color: #ffe552;">星期六20:15</div>
+        <div id="vvv" style="border: 5px solid #ffe552;color: #ffe552;">法定节假日20:15</div>
+        <div id="vvv" style="border: 5px solid #ffe552;color: #ffe552;">星期五20:15</div>
+   <div class="button" onclick="copyContent(1)"><span style="font-size: 44px;">1</span><br>机械狼</div>vvv
+    <div class="button" onclick="copyContent(2)"><span style="font-size: 44px;">2</span><br>失踪的宝物</div>
+    <div class="button" onclick="copyContent(3)"><span style="font-size: 44px;">3</span><br>狼神对决</div>
+    <div class="button" onclick="copyContent(4)"><span style="font-size: 44px;">4</span><br>爱神</div>
+    
+    <div class="button" onclick="copyContent(6)"><span style="font-size: 44px;">6</span><br>白神</div>
+    <div class="button" onclick="copyContent(7)"><span style="font-size: 44px;">7</span><br>五神大乱斗</div>
+    <div class="button" onclick="copyContent(8)"><span style="font-size: 44px;">8</span><br>月影传说</div>
+    <div class="button" onclick="copyContent(9)"><span style="font-size: 44px;">9</span><br>十二人内战</div>-->
+
+
+
+</center>
+    <!-- 隐藏的p标签 -->
+    
+    
+    <script>
+function copyContent(id) {
+    // 获取对应的<p>标签的HTML内容
+    var content = document.getElementById("p" + id).innerHTML;
+
+    // 替换<br>标签为换行符
+    content = content.replace(/<br\s*\/?>/gi, '\n');
+
+    // 创建一个textarea元素用于复制
+    var textarea = document.createElement("textarea");
+    textarea.value = content;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    // 弹出提示
+    alert("复制成功，可前往游戏粘贴");
+}
+    </script>
+
+    <script>function calculateDaysSince(startDate) {
+const today = new Date();
+const diffInMilliseconds = today - startDate;
+const diffInDays = Math.round(diffInMilliseconds / (1000 * 60 * 60 * 24));
+return diffInDays;
+    }
+    
+    function openModal() {
+document.getElementById('modal').style.display = "block";
+document.getElementById('overlay').style.display = "block";
+document.getElementById('close-hint').style.display = "block";
+    }
+    
+    function closeModal() {
+document.getElementById('modal').style.display = "none";
+document.getElementById('overlay').style.display = "none";
+document.getElementById('close-hint').style.display = "none";
+    }
+    
+    function closeModalIfOverlayClicked() {
+if (event.target === document.getElementById('overlay')) {
+    closeModal();
+}
+    }
+    
+    // Set the days since 2022-07-02
+    const startDate = new Date('2022/07/02');
+    document.getElementById('days').innerText = calculateDaysSince(startDate);</script>
+
+</body></html>

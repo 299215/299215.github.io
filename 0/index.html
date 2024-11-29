@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: #000000;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>P式娱乐房公会小站</title>
+    <script>
+        // 检查字体加载状态
+        function checkFontLoaded() {
+            var fontCheck = document.createElement('span');
+            fontCheck.style.fontFamily = 'Roboto, sans-serif';
+            fontCheck.textContent = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            document.body.appendChild(fontCheck);
+
+            // 判断字体是否加载完成
+            var fontLoaded = fontCheck.offsetWidth > 0;
+            document.body.removeChild(fontCheck);
+
+            return fontLoaded;
+        }
+
+        // 等待字体加载完成后显示页面内容
+        function waitForFonts() {
+            var checkInterval = setInterval(function() {
+                if (checkFontLoaded()) {
+                    document.body.style.visibility = 'visible'; // 字体加载完成后显示内容
+                    clearInterval(checkInterval); // 停止检测
+                    console.log('字体加载完成');
+                }
+            }, 100); // 每100ms检查一次字体是否加载完成
+        }
+
+        // 页面加载完成后开始检测字体加载状态
+        window.onload = function() {
+            console.log('所有资源加载完毕');
+            waitForFonts();
+        };
+    </script>
+    <style>
+@import url('https://static.zeoseven.com/zsft/161/main/result.css');
+
+html {
+   font-family: "Sarasa Gothic SC";
+   font-weight: normal;
+   
+}
+@keyframes tmd {
+   0%{opacity: 0;}
+   40%{opacity: 0;}
+   100%{opacity: 1;} 
+}
+    body {
+margin: 0;
+padding: 0;
+
+color: #fff;
+animation-name: tmd;animation-duration: 0.9s;
+height: 100%;
+    }
+    
+    .top-section {
+background-color: #da0054;color: #fff;
+border-radius: 19px;margin: 20px;left: 0;right: 0;
+width: 309px;
+height: 144px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center; /* Adjust size based on viewport width */
+    }
+
+    .days-container {
+position: relative;
+    }
+    
+    .days-container span:first-child {
+font-size: 59px; /* Larger than the "天" character */
+    }
+    
+    .days-container span:last-child {
+position: absolute;
+bottom: 0;
+right: 0;
+font-size: 2vw; /* Smaller than the main number */
+    }
+    
+    .button-container {
+margin-top: auto;
+text-align: center;
+width: 100%;
+    }
+    
+    .circle-button {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background-color: #ff6347; /* Tomato color */
+color: white;
+border: none;
+font-size: 1.5rem;
+cursor: default;
+margin-bottom: 20px;
+    }
+    
+    .modal {
+display: none; 
+position: fixed; 
+z-index: 1; 
+left: 0;
+top: 0;
+width: 100%; 
+height: 100%; 
+overflow: auto; 
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4); 
+    }
+    
+    .modal-content {
+margin: 15% auto;
+margin-top: 23%;
+padding: 20px;
+border: 1px solid #888;
+width: 80%; 
+max-width: 600px;
+text-align: center;
+position: relative;
+    }
+    
+    .close-button {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+    }
+    
+    .close-button:hover,
+    .close-button:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+    }
+    
+    .overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.5);
+z-index: 2;
+    }
+    #copyButton {
+    background-color: rgb(0, 89, 255);
+    color: white;
+    padding: 10px 43px;font-size: 22px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+    #close-hint {
+position: fixed;
+bottom: 10px;
+width: 100%;
+text-align: center;
+color: #aaa;
+font-size: 1rem;
+    }</style>
+</head>
+<body><center>
+    <div class="top-section">
+<div class="days-container"><span style="font-size: 27px;">我们已经成立了</span><br>
+    <span id="days" style="font-size: 67px;">879</span><span style="font-size: 22px;">天</span>
+</div>
+    </div>
+</center>
+
+     <style>
+/* 圆形按钮样式 */
+
+    #vvv{color: #52ff6f; border-radius: 7px;font-size: 44px;
+    text-align: center;
+border: 5px solid #52ff6f;border-radius: 19px;margin: 14px;left: 0;right: 0;
+width: 266px;
+height: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center; cursor: default;justify-items: center;align-items: center;align-self: center;align-content: center;align-tracks: calc(center);
+    overflow: hidden;box-sizing: border-box;}
+/* 隐藏p标签 */
+p {
+    display: none;
+}
+.iframe-container {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: left 0.5s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .iframe-container.show {
+            left: 0;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .close-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+
+     <center><span style="font-size: 39px;">P式娱乐房</span><br><span style="font-size: 25px;">进阶模式第一娱乐房组织</span><hr>
+        <br>
+        <div class="button" onclick="copyContent(5)" id="vvv">房规复制</div>
+        <div id="vvv" class="xz1" style="border: 5px solid #ffe552;color: #ffe552;">班次表</div>
+        <div id="vvv" class="xz2" style="border: 5px solid #1cd2ff;color: #1cd2ff;">公告栏</div>
+
+<br><br><hr>小站版本: 3.0.0<br>维护者: Pixel<br>代码编写者: Pixel<br>QQ群: 706230911<br>狼人杀公会号: 299215
+
+<!-- 圆形按钮    <div class="button" onclick="copyContent(1)"><span style="font-size: 44px;">1</span><br>机械狼</div>vvv
+    <div class="button" onclick="copyContent(2)"><span style="font-size: 44px;">2</span><br>失踪的宝物</div>
+    <div class="button" onclick="copyContent(3)"><span style="font-size: 44px;">3</span><br>狼神对决</div>
+    <div class="button" onclick="copyContent(4)"><span style="font-size: 44px;">4</span><br>爱神</div>
+    
+    <div class="button" onclick="copyContent(6)"><span style="font-size: 44px;">6</span><br>白神</div>
+    <div class="button" onclick="copyContent(7)"><span style="font-size: 44px;">7</span><br>五神大乱斗</div>
+    <div class="button" onclick="copyContent(8)"><span style="font-size: 44px;">8</span><br>月影传说</div>
+    <div class="button" onclick="copyContent(9)"><span style="font-size: 44px;">9</span><br>十二人内战</div>-->
+
+
+    <div class="iframe-container" id="iframe1">
+        <button class="close-btn" onclick="closeIframe('iframe1')">返回</button>
+        <iframe src="a1.html" id="if1"></iframe>
+    </div>
+    
+    <div class="iframe-container" id="iframe2">
+        <button class="close-btn" onclick="closeIframe('iframe2')">返回</button>
+        <iframe src="a2.html" id="if2"></iframe>
+    </div>
+    
+    <script>
+        // 预先加载 iframe 的内容
+        document.addEventListener("DOMContentLoaded", function () {
+            // You can optionally fetch data or handle on DOMContentLoaded if needed
+        });
+    
+        document.querySelector('.xz1').onclick = function() {
+            document.getElementById('iframe1').classList.add('show');
+        };
+        document.querySelector('.xz2').onclick = function() {
+            document.getElementById('iframe2').classList.add('show');
+        };
+    
+        function closeIframe(id) {
+            document.getElementById(id).classList.remove('show');
+        }
+    </script>
+
+</center>
+    <!-- 隐藏的p标签 -->
+    
+    <p id="p5">P式•守卫白狼王🌙54.1<br>
+        💎全程禁止任何贴脸骂人<br>
+        💎禁止警下预/怂预(吞警徽除外)<br>
+        💎存活玩家禁止夜间送礼<br>
+        💎严禁任何人进行仇杀仇毒<br>
+        💎禁止恶意黑麦<br>
+        💎禁止场外信息/配置绑架<br>
+        💎插麦打字自由(注意适度)<br>
+        💎禁止无理由底牌压制<br>
+        ⭐️游戏Bug: 当白狼王警上自爆后，天亮时核查现场玩家开麦情况，无法开麦玩家视为已出局<br>
+        ⭐️房员有权根据房规申请交牌</p>
+    
+    <script>
+function copyContent(id) {
+    // 获取对应的<p>标签的HTML内容
+    var content = document.getElementById("p" + id).innerHTML;
+
+    // 替换<br>标签为换行符
+    content = content.replace(/<br\s*\/?>/gi, '\n');
+
+    // 创建一个textarea元素用于复制
+    var textarea = document.createElement("textarea");
+    textarea.value = content;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    // 弹出提示
+    alert("复制成功，可前往游戏粘贴");
+}
+    </script>
+
+
+    <!--<div class="button-container" style="margin-top: 44px;">
+<button class="circle-button" onclick="openModal()">房规</div>
+    </div>
+    <div id="modal" class="modal">
+<div class="modal-content">
+    <span class="close-button" onclick="closeModal()" style="font-size: 50px;position: absolute;right: 11px;top: 0px;">&times;</span>
+    
+    <h1>游戏房规</h1>
+    <p style="text-align: left;padding: 30px;" id="fuzhi">P式•守卫白狼王💎53.0<br>
+⑴禁止贴脸骂人<br>
+⑵禁止警下预/怂预(吞警徽除外)<br>
+⑶禁止夜间送礼<br>
+⑷禁止仇杀仇毒<br>
+⑸禁止恶意黑麦<br>
+⑹禁止场外信息<br>
+⑺无翻枪，无底牌压制<br>
+⑻无点杀，违规直接判交牌</p>
+<button id="copyButton">复制</div>
+       
+    
+<script>
+    document.getElementById("copyButton").onclick = function() {
+const textToCopy = document.getElementById("fuzhi").innerText; // 获取<p>内的文本内容
+navigator.clipboard.writeText(textToCopy) // 使用Clipboard API复制文本
+    .then(() => {
+alert("复制成功 版本: 53.0"); // 复制成功提示
+
+    })
+    .catch(err => {
+console.error("复制房规失败"); // 复制失败提示
+    });
+    }
+</script>
+</div>
+    </div>
+    <div class="overlay" onclick="closeModalIfOverlayClicked()"></div>
+    --><p id="close-hint">进阶模式第一娱乐房组织</p>
+    <script>function calculateDaysSince(startDate) {
+const today = new Date();
+const diffInMilliseconds = today - startDate;
+const diffInDays = Math.round(diffInMilliseconds / (1000 * 60 * 60 * 24));
+return diffInDays;
+    }
+    
+    function openModal() {
+document.getElementById('modal').style.display = "block";
+document.getElementById('overlay').style.display = "block";
+document.getElementById('close-hint').style.display = "block";
+    }
+    
+    function closeModal() {
+document.getElementById('modal').style.display = "none";
+document.getElementById('overlay').style.display = "none";
+document.getElementById('close-hint').style.display = "none";
+    }
+    
+    function closeModalIfOverlayClicked() {
+if (event.target === document.getElementById('overlay')) {
+    closeModal();
+}
+    }
+    
+    // Set the days since 2022-07-02
+    const startDate = new Date('2022/07/02');
+    document.getElementById('days').innerText = calculateDaysSince(startDate);</script>
+
+</body></html>
