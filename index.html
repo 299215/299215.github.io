@@ -1,364 +1,119 @@
 <!DOCTYPE html>
-<html lang="zh-CN" style="background-color: #000000;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    
-    <meta http-equiv="Cache-Control" content="max-age=0">
-    <meta http-equiv="Cache-Control" content="no-store">
-    
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-store">
-    
-    <meta http-equiv="Cache-Control" content="private, no-store, no-cache, must-revalidate">
-    
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>P式娱乐房公会小站</title>
-    <script>// 为id为xz1的iframe添加时间戳属性
-        var iframe1 = document.getElementById('xz1');
-        if (iframe1) {
-            var timestamp = new Date().getTime();
-            iframe1.src = iframe1.src + '?timestamp=' + timestamp;
-        }
-        
-        // 为id为xz2的iframe添加时间戳属性
-        var iframe2 = document.getElementById('xz2');
-        if (iframe2) {
-            var timestamp = new Date().getTime();
-            iframe2.src = iframe2.src + '?timestamp=' + timestamp;
-        }
-        </script>
-    <script>
-        // 检查字体加载状态
-        function checkFontLoaded() {
-            var fontCheck = document.createElement('span');
-            fontCheck.style.fontFamily = 'Roboto, sans-serif';
-            fontCheck.textContent = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            document.body.appendChild(fontCheck);
-
-            // 判断字体是否加载完成
-            var fontLoaded = fontCheck.offsetWidth > 0;
-            document.body.removeChild(fontCheck);
-
-            return fontLoaded;
-        }
-
-        // 等待字体加载完成后显示页面内容
-        function waitForFonts() {
-            var checkInterval = setInterval(function() {
-                if (checkFontLoaded()) {
-                    document.body.style.visibility = 'visible'; // 字体加载完成后显示内容
-                    clearInterval(checkInterval); // 停止检测
-                    console.log('字体加载完成');
-                }
-            }, 100); // 每100ms检查一次字体是否加载完成
-        }
-
-        // 页面加载完成后开始检测字体加载状态
-        window.onload = function() {
-            console.log('所有资源加载完毕');
-            waitForFonts();
-        };
-    </script>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P娱日和公元时间换算器</title>
     <style>
-@import url('https://static.zeoseven.com/zsft/161/main/result.css');
-
-html {
-   font-family: "Sarasa Gothic SC";
-   font-weight: normal;
-   
-}
-@keyframes tmd {
-   0%{opacity: 0;}
-   60%{opacity: 0;}
-   100%{opacity: 1;} 
-}
-iframe{background-color: #000000;}
-    body {
-margin: 0;
-padding: 0;
-
-color: #fff;
-animation-name: tmd;animation-duration: 0.7s;
-height: 100%;
-    }
-    
-    .top-section {
-background-color: #da0054;color: #fff;
-border-radius: 19px;margin: 20px;left: 0;right: 0;
-width: 309px;
-height: 144px;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center; /* Adjust size based on viewport width */
-    }
-
-    .days-container {
-position: relative;
-    }
-    
-    .days-container span:first-child {
-font-size: 59px; /* Larger than the "天" character */
-    }
-    
-    .days-container span:last-child {
-position: absolute;
-bottom: 0;
-right: 0;
-font-size: 2vw; /* Smaller than the main number */
-    }
-    
-    .button-container {
-margin-top: auto;
-text-align: center;
-width: 100%;
-    }
-    
-    .circle-button {
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background-color: #ff6347; /* Tomato color */
-color: white;
-border: none;
-font-size: 1.5rem;
-cursor: default;
-margin-bottom: 20px;
-    }
-    
-    .modal {
-display: none; 
-position: fixed; 
-z-index: 1; 
-left: 0;
-top: 0;
-width: 100%; 
-height: 100%; 
-overflow: auto; 
-background-color: rgb(0,0,0); 
-background-color: rgba(0,0,0,0.4); 
-    }
-    
-    .modal-content {
-margin: 15% auto;
-margin-top: 23%;
-padding: 20px;
-border: 1px solid #888;
-width: 80%; 
-max-width: 600px;
-text-align: center;
-position: relative;
-    }
-    
-    .close-button {
-color: #aaa;
-float: right;
-font-size: 28px;
-font-weight: bold;
-cursor: pointer;
-    }
-    
-    .close-button:hover,
-    .close-button:focus {
-color: black;
-text-decoration: none;
-cursor: pointer;
-    }
-    
-    .overlay {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0,0,0,0.5);
-z-index: 2;
-    }
-    #copyButton {
-    background-color: rgb(0, 89, 255);
-    color: white;
-    padding: 10px 43px;font-size: 22px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-    #close-hint {
-position: fixed;
-bottom: 10px;
-width: 100%;
-text-align: center;
-color: #aaa;
-font-size: 1rem;
-    }
-    #di{background-color: #000000;width: 100%;height: 100%;position: fixed;z-index: -1;left:0px;top:0px;}
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            min-height: 30px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .info {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        .today-info {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #e6f7ff;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body><div id="di"></div><center>
-    <div class="top-section">
-<div class="days-container"><span style="font-size: 27px;">我们已经成立了</span><br>
-    <span id="days" style="font-size: 67px;">879</span><span style="font-size: 22px;">天</span>
-</div>
+<body>
+    <div class="container">
+        <h2>P娱日和公元时间换算器</h2>
+        <p>输入P娱日数字，自动计算对应公元日期</p>
+        
+        <div class="today-info" id="todayInfo">正在计算今天的P娱日...</div>
+        
+        <div>
+            <label for="pday">P娱日：</label>
+            <input type="number" id="pday" min="1" value="1" oninput="calculateDate()">
+        </div>
+        
+        <div class="result" id="result">公元日期：2022年7月2日</div>
+        
+        <div class="info">
+            <p>P式娱乐房公会</p>
+            <p>QQ群：702724682</p>
+        </div>
     </div>
-</center>
 
-     <style>
-/* 圆形按钮样式 */
-
-    #vvv{color: #52ff6f; border-radius: 7px;font-size: 44px;
-    text-align: center;
-border: 5px solid #52ff6f;border-radius: 19px;margin: 14px;left: 0;right: 0;
-width: 266px;
-height: 100px;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center; cursor: default;justify-items: center;align-items: center;align-self: center;align-content: center;align-tracks: calc(center);
-    overflow: hidden;box-sizing: border-box;}
-/* 隐藏p标签 */
-p {
-    display: none;
-}
-.iframe-container {
-            position: fixed;
-            top: 0;
-            left: 100%;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            transition: left 0.37s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .iframe-container.show {
-            left: 0;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .close-btn {
-            position: absolute;border-radius: 10px;
-            bottom: 24px;
-            right: 26px;
-            padding: 14px 20px;
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: default;
-            font-size: 23px;
-        }
-    </style>
-
-     <center><span style="font-size: 39px;">P式娱乐房</span><br><span style="font-size: 25px;">进阶模式第一娱乐房组织</span><hr>
-        <br>
-        <div class="button" onclick="copyContent(5)" id="vvv">房规55.0</div>
-        <!--<div id="vvv" class="xz1" style="border: 5px solid #ffe552;color: #ffe552;">班次表</div>
-        <div id="vvv" class="xz2" style="border: 5px solid #1cd2ff;color: #1cd2ff;">公告栏</div>-->
-
-<br><br><hr>小站版本: 3.1.7<br>维护者: Pixel<br>代码编写者: Pixel<br>QQ群: 706230911<br>狼人杀公会号: 299215<br><br><br><br>
-
-
-   <!-- <div class="iframe-container" id="iframe1">
-        <button class="close-btn" onclick="closeIframe('iframe1')">返回</button>
-        <iframe src="a1.html" id="if1"></iframe>
-    </div>
-    
-    <div class="iframe-container" id="iframe2">
-        <button class="close-btn" onclick="closeIframe('iframe2')">返回</button>
-        <iframe src="a2.html" id="if2"></iframe>
-    </div>-->
-    
     <script>
-        // 预先加载 iframe 的内容
-        document.addEventListener("DOMContentLoaded", function () {
-            // You can optionally fetch data or handle on DOMContentLoaded if needed
-        });
-    
-        document.querySelector('.xz1').onclick = function() {
-            document.getElementById('iframe1').classList.add('show');
-        };
-        document.querySelector('.xz2').onclick = function() {
-            document.getElementById('iframe2').classList.add('show');
-        };
-    
-        function closeIframe(id) {
-            document.getElementById(id).classList.remove('show');
+        // 基准日期：2022年7月2日（P娱日1日）
+        const baseDate = new Date(2022, 6, 2); // 月份是0-11，所以6表示7月
+        
+        function calculateTodayPday() {
+            const today = new Date();
+            // 计算今天与基准日之间的天数差
+            const timeDiff = today - baseDate;
+            const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)) + 1; // +1因为第一天是P娱日1日
+            
+            // 更新今天的P娱日信息
+            document.getElementById('todayInfo').textContent = 
+                `今天是P娱${daysDiff}日（${today.getFullYear()}年${today.getMonth()+1}月${today.getDate()}日）`;
+            
+            // 设置输入框默认值为今天的P娱日
+            document.getElementById('pday').value = daysDiff;
+            
+            // 计算并显示今天的日期（应该就是今天的日期）
+            calculateDate();
         }
+        
+        function calculateDate() {
+            const pday = parseInt(document.getElementById('pday').value);
+            if (isNaN(pday) || pday < 1) {
+                document.getElementById('result').textContent = '请输入有效的P娱日数字';
+                return;
+            }
+            
+            // 计算目标日期（P娱日-1天，因为第一天就是基准日）
+            const targetDate = new Date(baseDate);
+            targetDate.setDate(baseDate.getDate() + pday - 1);
+            
+            // 格式化日期
+            const year = targetDate.getFullYear();
+            const month = targetDate.getMonth() + 1;
+            const day = targetDate.getDate();
+            
+            document.getElementById('result').textContent = `公元日期：${year}年${month}月${day}日`;
+        }
+        
+        // 页面加载时自动计算今天的P娱日
+        window.onload = calculateTodayPday;
     </script>
-
-</center>
-    <!-- 隐藏的p标签 -->
-    
-    <p id="p5">P式•守卫白狼王🌙55.0<br>
-💎禁止贴脸骂人/新手光环<br>
-💎除吞警徽外禁止打警下预<br>
-💎玩家全程禁止送礼<br>
-💎禁止仇杀仇毒<br>
-💎禁止恶意黑麦/无关发言<br>
-💎禁止场外信息<br>
-💎插麦打字自由(注意适度)<br>
-💎禁止底牌压制/翻枪<br>
-💎神/民穿预必须放手</p>
-    
-    <script>
-function copyContent(id) {
-    // 获取对应的<p>标签的HTML内容
-    var content = document.getElementById("p" + id).innerHTML;
-
-    // 替换<br>标签为换行符
-    content = content.replace(/<br\s*\/?>/gi, '\n');
-
-    // 创建一个textarea元素用于复制
-    var textarea = document.createElement("textarea");
-    textarea.value = content;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-
-    // 弹出提示
-    alert("复制成功，可前往游戏粘贴");
-}
-    </script>
-
-
-    
-    <script>function calculateDaysSince(startDate) {
-const today = new Date();
-const diffInMilliseconds = today - startDate;
-const diffInDays = Math.round(diffInMilliseconds / (1000 * 60 * 60 * 24));
-return diffInDays;
-    }
-    
-    function openModal() {
-document.getElementById('modal').style.display = "block";
-document.getElementById('overlay').style.display = "block";
-document.getElementById('close-hint').style.display = "block";
-    }
-    
-    function closeModal() {
-document.getElementById('modal').style.display = "none";
-document.getElementById('overlay').style.display = "none";
-document.getElementById('close-hint').style.display = "none";
-    }
-    
-    function closeModalIfOverlayClicked() {
-if (event.target === document.getElementById('overlay')) {
-    closeModal();
-}
-    }
-    
-    // Set the days since 2022-07-02
-    const startDate = new Date('2022/07/02');
-    document.getElementById('days').innerText = calculateDaysSince(startDate);</script>
-
-</body></html>
+</body>
+</html>
