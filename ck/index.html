@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html align="center" style="cursor:default;background-color: #fff;background: linear-gradient(to bottom, #ffffff, #c8c8ff);font-family: Arial, Helvetica, sans-serif;" leftmargin="0" topmargin="0" οncοntextmenu="return false" οndragstart="return false" onselectstart="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()" ondragstart="return false;" oncontextmenu="return false;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" /><style>html{font-family: Roboto;}</style>
+<title>P式娱乐房抽卡器</title>
+<script language="JavaScript">
+<!--
+function updateDisplay() {
+    // Get current time
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    
+    // Format with leading zeros
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+    
+    // Display time
+    document.getElementById("timeDisplay").innerHTML = hours + ":" + minutes + ":" + seconds;
+    
+    // Generate and display random number
+    var randomNum = Math.floor(Math.random() * 999) + 1;
+    document.getElementById("randomDisplay").innerHTML = randomNum;
+    
+    // Update every second
+    setTimeout("updateDisplay()", 20);
+}
+//-->
+</script>
+
+</head>
+<body onload="updateDisplay()">
+<h1 align="center">抽卡器</h1>
+<div align="center">
+    
+
+
+    <div style="font-size: 39px; font-weight: bold;background-color: #ff0000;padding: 11px;border-radius: 19px;width: auto;height: 94px;display: inline-block;color: #fff;"><div id="bDisplay" style="display: inline-block;height: 14px;">加载中...</div>    <script>
+        // 基准日期设置（2022年7月2日作为P娱1日）
+        const bBaseDate = new Date(2022, 6, 2); // 注意月份从0开始计数
+        
+        function bCalculatePDay() {
+            const bCurrentDate = new Date();
+            const bTimeDiff = bCurrentDate - bBaseDate;
+            const bDayDiff = Math.floor(bTimeDiff / (1000 * 3600 * 24));
+            return bDayDiff + 1; // 包含起始日
+        }
+
+
+
+        function bUpdateDisplay() {
+            const bPDay = bCalculatePDay();
+            document.getElementById('bDisplay').textContent = `P娱${bPDay}日`;
+        }
+
+        // 初始加载立即更新
+        bUpdateDisplay();
+        // 每秒更新一次
+        setInterval(bUpdateDisplay, 1000);
+    </script><p id="timeDisplay">00:00:00</p></div>
+</div>
+<div align="center">
+    <div id="randomDisplay" style="font-size: 151px; font-weight: bold;color: rgb(52, 0, 148);margin-top: 30px;">0</div>
+</div>
+</body>
+</html>
