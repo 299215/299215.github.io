@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>日期变化</title>
+    <style>
+        body {
+            display: flex;font-family: arial,simhei;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="date">2022年4月4日</div>
+
+    <script>
+        const start = new Date('2022-04-04');
+        const end = new Date('2025-07-13');
+        const duration = 240000; // 4分钟
+        
+        function updateDate(timestamp) {
+            if (!updateDate.startTime) updateDate.startTime = timestamp;
+            const progress = Math.min((timestamp - updateDate.startTime) / duration, 1);
+            
+            const current = new Date(start.getTime() + progress * (end.getTime() - start.getTime()));
+            document.getElementById('date').textContent = 
+                `${current.getFullYear()}年${current.getMonth()+1}月${current.getDate()}日`;
+            
+            if (progress < 1) requestAnimationFrame(updateDate);
+        }
+        
+        requestAnimationFrame(updateDate);
+    </script>
+</body>
+</html>
